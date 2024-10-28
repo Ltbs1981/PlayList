@@ -1,10 +1,4 @@
 ﻿using PlayList.Core.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PlayList.Infra.Repositorios
 {
