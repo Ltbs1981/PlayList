@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="Core\Contratos\" />
-    <Folder Include="Web\Controller\" />
   </ItemGroup>
 
 </Project>
