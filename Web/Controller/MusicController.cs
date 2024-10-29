@@ -29,5 +29,15 @@ namespace PlayList.Web.Controller
                 Console.WriteLine($"{musica.Id}{musica.Nome}{musica.Artista}{musica.Duracao}");
             }
         }
+        public void Editar(int id, string novoNome)
+        {
+            _musicService = new MusicService();
+            _musicService.Update(id, novoNome);
+        }
+        public void Delete(int id)
+        {
+            _musicService = new MusicService();
+            _musicService.Delete(id);
+        }
     }
 }
