@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PlayList.Core.Entidades
+﻿namespace PlayList.Core.Entidades
 {
     internal class Musica
     {
+        public Musica(string nome, string artista, int duracao)
+        {
+            Nome = nome;
+            Artista = artista;
+            Duracao = duracao;
+        }
+
         public int Id { get; set; }
         public string  Nome { get; set; }
         public string  Artista { get; set; }

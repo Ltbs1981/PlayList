@@ -12,13 +12,13 @@ namespace PlayList.Web.Controller
         }
         public void Criar(string nome, string artista, int duracao) 
         {
-            Musica musica = new Musica()
-            {
-                Nome = nome,
-                Artista = artista,
-                Duracao = duracao
-            };
-            _musicService = new MusicService();
+            Musica musica = new Musica(nome, artista, duracao);
+            //{
+                //Nome = nome,
+                //Artista = artista,
+                //Duracao = duracao
+            //};
+            //_musicService = new MusicService();
             _musicService.Add(musica);
         }
         public void Ler()
