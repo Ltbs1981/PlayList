@@ -4,7 +4,7 @@ namespace PlayList.Web.Controller
 {
     internal class MusicController
            {
-        private MusicService _musicService;
+        private  MusicService _musicService;
 
         public MusicController()
         {
