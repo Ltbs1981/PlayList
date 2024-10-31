@@ -6,7 +6,7 @@ namespace PlayList.Core.Contratos.Servicos
         void Add(Musica musica);
         List<Musica> GetAll();
         void Update(int id, string novoNome);
-        void Delete(Musica musica);
+        void Delete(int id);
 
     }
 }

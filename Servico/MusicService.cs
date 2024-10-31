@@ -1,8 +1,9 @@
-﻿using PlayList.Core.Entidades;
+﻿using PlayList.Core.Contratos.Servicos;
+using PlayList.Core.Entidades;
 using PlayList.Infra.Repositorios;
 namespace PlayList.Servico
 {
-    internal class MusicService
+    internal class MusicService: IMusicService
     {
         private static MusicRepository _musicRepository = new MusicRepository();
 
