@@ -1,8 +1,8 @@
 ﻿using PlayList.Core.Entidades;
-
+using PlayList.Core.Contratos.Repositorios;
 namespace PlayList.Infra.Repositorios
 {
-    internal class MusicRepository
+    internal class MusicRepository: IMusicRepository
     {
         private static List<Musica> musicas = new List<Musica>();
         private static int id = 0;
