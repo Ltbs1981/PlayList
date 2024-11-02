@@ -1,42 +1,41 @@
 ﻿using PlayList.Core.Entidades;
-using PlayList.Servico;
+using PlayList.Core.Contratos.Servicos;
+using System;
+
 namespace PlayList.Web.Controller
 {
     internal class MusicController
-           {
-        private  MusicService _musicService;
+    {
+        private readonly IMusicService _musicService;
 
-        public MusicController()
+        //colocando a responsabilidade para o construtor
+        public MusicController(IMusicService musicService)
         {
-            _musicService = new MusicService();
+            _musicService = musicService;
         }
-        public void Criar(string nome, string artista, int duracao) 
+
+        public void Criar(string nome, string artista, int duracao)
         {
             Musica musica = new Musica(nome, artista, duracao);
-            //{
-                //Nome = nome,
-                //Artista = artista,
-                //Duracao = duracao
-            //};
-            //_musicService = new MusicService();
             _musicService.Add(musica);
         }
+
         public void Ler()
         {
             var musicas = _musicService.GetAll();
             foreach (var musica in musicas)
             {
-                Console.WriteLine($"{musica.Id}{musica.Nome}{musica.Artista}{musica.Duracao}");
+                Console.WriteLine($"{musica.Id} - {musica.Nome} - {musica.Artista} - {musica.Duracao} min");
             }
         }
+
         public void Editar(int id, string novoNome)
         {
-            _musicService = new MusicService();
             _musicService.Update(id, novoNome);
         }
+
         public void Delete(int id)
         {
-            _musicService = new MusicService();
             _musicService.Delete(id);
         }
     }

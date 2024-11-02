@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.DependencyInjection;
+using PlayList.Core.Contratos.Repositorios;
+using PlayList.Core.Contratos.Servicos;
+using PlayList.Infra.Repositorios;
+using PlayList.Servico;
+using PlayList.Web.Controller;
 
 namespace PlayList
 {
     internal class Startup
     {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            
+            services.AddScoped<IMusicRepository, MusicRepository>();
+            services.AddScoped<IMusicService, MusicService>();
+
+
+            services.AddScoped<MusicController>();
+        }
     }
 }

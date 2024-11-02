@@ -1,17 +1,36 @@
-﻿using PlayList.Web.Controller;
+﻿using Microsoft.Extensions.DependencyInjection;
+using PlayList;
+using PlayList.Web.Controller;
+using System;
 
-MusicController musicController = new MusicController();
+namespace PlayList
+{
+    internal class Program
+    {
+        private static void Main(string[] args)
+        {
+            
+            var serviceCollection = new ServiceCollection();
+            var startup = new Startup();
+            startup.ConfigureServices(serviceCollection);
 
-musicController.Criar("Dont stop believin", "Teddy swins", 420);
-musicController.Criar("Barracuda", "Heart", 240);
-musicController.Criar("Fear of the dark", "Irom Madem", 302);
-musicController.Criar("Bad lion", "Imagine Dragons", 310);
-musicController.Criar("The unforgivem", "Metalica", 224);
-
-musicController.Ler();
+            var serviceProvider = serviceCollection.BuildServiceProvider();
 
 
-musicController.Editar(3, "The unforgivem 2");
-musicController.Ler();
-musicController.Delete(3);
-musicController.Ler();
+            var musicController = serviceProvider.GetRequiredService<MusicController>();
+
+            
+            musicController.Criar("Dead Lion", "Imagine Dragons", 288);
+            musicController.Criar("The Unforgivem", "Metalica", 302);
+            musicController.Ler();
+
+            musicController.Editar(0, "Believe");
+            musicController.Ler();
+
+            musicController.Delete(1);
+            musicController.Ler();
+
+            
+        }
+    }
+}
