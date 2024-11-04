@@ -6,37 +6,36 @@ namespace PlayList.Web.Controller
 {
     internal class MusicController
     {
-        private readonly IMusicService _musicService;
+        private readonly IMidiaService _midiaService;
 
-        //colocando a responsabilidade para o construtor
-        public MusicController(IMusicService musicService)
+        public MusicController(IMidiaService midiaService)
         {
-            _musicService = musicService;
+            _midiaService = midiaService;
         }
 
         public void Criar(string nome, string artista, int duracao)
         {
-            Musica musica = new Musica(nome, artista, duracao);
-            _musicService.Add(musica);
+            var musica = new Musica(nome, artista, duracao);
+            _midiaService.Add(musica);
         }
 
         public void Ler()
         {
-            var musicas = _musicService.GetAll();
-            foreach (var musica in musicas)
+            var midias = _midiaService.GetAll();
+            foreach (var midia in midias)
             {
-                Console.WriteLine($"{musica.Id} - {musica.Nome} - {musica.Artista} - {musica.Duracao} min");
+                midia.ExibirDetalhes();
             }
         }
 
         public void Editar(int id, string novoNome)
         {
-            _musicService.Update(id, novoNome);
+            _midiaService.Update(id, novoNome);
         }
 
         public void Delete(int id)
         {
-            _musicService.Delete(id);
+            _midiaService.Delete(id);
         }
     }
 }

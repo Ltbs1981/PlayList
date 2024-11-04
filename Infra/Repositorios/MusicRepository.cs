@@ -1,28 +1,53 @@
 ﻿using PlayList.Core.Entidades;
 using PlayList.Core.Contratos.Repositorios;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace PlayList.Infra.Repositorios
 {
-    internal class MusicRepository: IMusicRepository
+    internal class MusicRepository : IMidiaRepository
     {
-        private static List<Musica> musicas = new List<Musica>();
+        private static List<Midia> midias = new List<Midia>();
         private static int id = 0;
 
-        public void Add(Musica musica)
+        public void Add(Midia midia)
         {
-            musica.Id = id++;
-            musicas.Add(musica);
+            if (string.IsNullOrWhiteSpace(midia.Nome) || string.IsNullOrWhiteSpace(midia.Artista) || midia.Duracao <= 0)
+            {
+                Console.WriteLine("Dados inválidos! Verifique os valores inseridos.");
+                return;
+            }
+
+            midia.Id = id++;
+            midias.Add(midia);
+            Console.WriteLine($"{midia.Nome} foi adicionado com sucesso!");
         }
-        public List<Musica> GetAll()
+
+        public List<Midia> GetAll()
         {
-            return musicas;
+            return midias;
         }
-        public void Update(Musica musica)
+
+        public void Update(Midia midia)
         {
-            Musica banco = musicas.FirstOrDefault(i => i.Id == musica.Id);
+            var midiaBanco = midias.FirstOrDefault(i => i.Id == midia.Id);
+            if (midiaBanco != null && !string.IsNullOrWhiteSpace(midia.Nome))
+            {
+                midiaBanco.Nome = midia.Nome;
+                Console.WriteLine("Nome atualizado com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("ID não encontrado ou nome inválido.");
+            }
         }
-        public void Delete(Musica musica)
+
+        public void Delete(Midia midia)
         {
-            musicas.Remove(musica);
+            if (midias.Remove(midia))
+                Console.WriteLine("Mídia removida com sucesso!");
+            else
+                Console.WriteLine("ID não encontrado.");
         }
     }
 }
