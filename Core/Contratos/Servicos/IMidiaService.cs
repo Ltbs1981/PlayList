@@ -1,10 +1,11 @@
 ﻿using PlayList.Core.Entidades;
 
 namespace PlayList.Core.Contratos.Servicos
-{    internal interface IMusicService
+{
+    internal interface IMidiaService
     {
-        void Add(Musica musica);
-        List<Musica> GetAll();
+        void Add(Midia midia);
+        List<Midia> GetAll();
         void Update(int id, string novoNome);
         void Delete(int id);
 

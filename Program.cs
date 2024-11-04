@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using PlayList;
+using PlayList.Core.Entidades;
 using PlayList.Web.Controller;
 using System;
 
@@ -30,7 +31,15 @@ namespace PlayList
             musicController.Delete(1);
             musicController.Ler();
 
+            var filmeController= serviceProvider.GetRequiredService<MusicController>();
+
+            filmeController.Criar("O Poderoso Chefão", "Francis Ford Coppola", 175);
+            filmeController.Ler();
+
             
+            //var filme = new Filme("O Poderoso Chefão", "Francis Ford Coppola", 175);
+            //filme.ExibirInformacoes();
+
         }
     }
 }

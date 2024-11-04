@@ -1,18 +1,13 @@
 ﻿namespace PlayList.Core.Entidades
 {
-    internal class Musica
+    internal class Musica : Midia
     {
         public Musica(string nome, string artista, int duracao)
+            : base(nome, artista, duracao) { }
+
+        public override void ExibirDetalhes()
         {
-            Nome = nome;
-            Artista = artista;
-            Duracao = duracao;
+            Console.WriteLine($"Musica: {Nome}, Artista: {Artista}, Duração: {Duracao} min");
         }
-
-        public int Id { get; set; }
-        public string  Nome { get; set; }
-        public string  Artista { get; set; }
-        public int Duracao { get; set; }
-
     }
 }

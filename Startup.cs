@@ -12,8 +12,8 @@ namespace PlayList
         public void ConfigureServices(IServiceCollection services)
         {
             
-            services.AddScoped<IMusicRepository, MusicRepository>();
-            services.AddScoped<IMusicService, MusicService>();
+            services.AddScoped<IMidiaRepository, MusicRepository>();
+            services.AddScoped<IMidiaService, MusicService>();
 
 
             services.AddScoped<MusicController>();
