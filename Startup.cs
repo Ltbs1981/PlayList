@@ -12,11 +12,11 @@ namespace PlayList
         public void ConfigureServices(IServiceCollection services)
         {
             
-            services.AddScoped<IMidiaRepository, MusicRepository>();
-            services.AddScoped<IMidiaService, MusicService>();
+            services.AddScoped<IMidiaRepository, MidiaRepository>();
+            services.AddScoped<IMidiaService, MidiaService>();
 
 
-            services.AddScoped<MusicController>();
+            services.AddScoped<MidiaController>();
         }
     }
 }

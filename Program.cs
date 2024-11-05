@@ -18,7 +18,7 @@ namespace PlayList
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
 
-            var musicController = serviceProvider.GetRequiredService<MusicController>();
+            var musicController = serviceProvider.GetRequiredService<MidiaController>();
 
             
             musicController.Criar("Dead Lion", "Imagine Dragons", 288);
@@ -31,14 +31,14 @@ namespace PlayList
             musicController.Delete(1);
             musicController.Ler();
 
-            var filmeController= serviceProvider.GetRequiredService<MusicController>();
+            var filmeController= serviceProvider.GetRequiredService<MidiaController>();
 
             filmeController.Criar("O Poderoso Chefão", "Francis Ford Coppola", 175);
             filmeController.Ler();
 
             
-            //var filme = new Filme("O Poderoso Chefão", "Francis Ford Coppola", 175);
-            //filme.ExibirInformacoes();
+
+            
 
         }
     }

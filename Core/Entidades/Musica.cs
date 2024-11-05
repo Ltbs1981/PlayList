@@ -7,7 +7,7 @@
 
         public override void ExibirDetalhes()
         {
-            Console.WriteLine($"Musica: {Nome}, Artista: {Artista}, Duração: {Duracao} min");
+            Console.WriteLine($" Música: {Nome}, Artista: {Artista}, Duração: {Duracao} segundos");
         }
     }
 }

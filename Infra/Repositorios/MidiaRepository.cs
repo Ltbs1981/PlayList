@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace PlayList.Infra.Repositorios
 {
-    internal class MusicRepository : IMidiaRepository
+    internal class MidiaRepository : IMidiaRepository
     {
         private static List<Midia> midias = new List<Midia>();
         private static int id = 0;

@@ -8,9 +8,9 @@ using PlayList.Infra.Repositorios;
 
 namespace PlayList.Servico
 {
-    internal class MusicService : IMidiaService
+    internal class MidiaService : IMidiaService
     {
-        private static MusicRepository _musicRepository = new MusicRepository();
+        private static MidiaRepository _musicRepository = new MidiaRepository();
 
         public void Add(Midia midia)
         {

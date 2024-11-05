@@ -4,11 +4,11 @@ using System;
 
 namespace PlayList.Web.Controller
 {
-    internal class MusicController
+    internal class MidiaController
     {
         private readonly IMidiaService _midiaService;
 
-        public MusicController(IMidiaService midiaService)
+        public MidiaController(IMidiaService midiaService)
         {
             _midiaService = midiaService;
         }

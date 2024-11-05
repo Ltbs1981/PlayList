@@ -13,7 +13,7 @@ namespace PlayList.Core.Entidades
         public string Artista { get; set; }
         public int Duracao { get; set; }
 
-        protected Midia(string nome, string artista, int duracao)
+        public Midia(string nome, string artista, int duracao)
         {
             Nome = nome;
             Artista = artista;
