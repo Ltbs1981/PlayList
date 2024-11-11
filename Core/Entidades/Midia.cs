@@ -20,7 +20,10 @@ namespace PlayList.Core.Entidades
             Duracao = duracao;
         }
 
-        public abstract void ExibirDetalhes();
+        public virtual void ExibirDetalhes() 
+        { 
+            Console.WriteLine($"Mídia:{Nome}\t Artista: {Artista}\t Tempo: {Duracao} "); 
+        }
 
     }
 }

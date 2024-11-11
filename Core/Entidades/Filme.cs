@@ -11,9 +11,11 @@
             DuracaoMinutos = duracaoMinutos;
         }
 
+        
         public override void ExibirDetalhes()
         {
             Console.WriteLine($"Filme: {Nome}, Diretor: {Diretor}, Duração: {DuracaoMinutos} minutos");
+            //return $"Filme: {Nome}, Diretor: {Diretor}, Duração: {DuracaoMinutos} minutos";
         }
     }
 }

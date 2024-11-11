@@ -16,7 +16,7 @@ namespace PlayList
             startup.ConfigureServices(serviceCollection);
 
             var serviceProvider = serviceCollection.BuildServiceProvider();
-
+            
 
             var musicController = serviceProvider.GetRequiredService<MidiaController>();
 
@@ -30,11 +30,16 @@ namespace PlayList
 
             musicController.Delete(1);
             musicController.Ler();
+            musicController.ToString();
 
-            var filmeController= serviceProvider.GetRequiredService<MidiaController>();
 
-            filmeController.Criar("O Poderoso Chefão", "Francis Ford Coppola", 175);
-            filmeController.Ler();
+            //Console.WriteLine($"Música: {musicController.ToString()}");
+            var filme = serviceProvider.GetRequiredService<MidiaController>();
+
+            filme.Criar("O Poderoso Chefão", "Francis Ford Coppola", 175);
+            filme.Criar("Top Gun", "To Cruise", 140);
+
+            filme.Ler();
 
             
 

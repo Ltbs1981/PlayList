@@ -10,7 +10,7 @@ namespace PlayList.Servico
 {
     internal class MidiaService : IMidiaService
     {
-        private static MidiaRepository _musicRepository = new MidiaRepository();
+        private static IMidiaRepository _musicRepository = new MidiaRepository();
 
         public void Add(Midia midia)
         {
